@@ -1,0 +1,384 @@
+PODS:
+  - camera_avfoundation (0.0.1):
+    - Flutter
+  - disk_space (0.0.1):
+    - Flutter
+  - DKImagePickerController/Core (4.3.4):
+    - DKImagePickerController/ImageDataManager
+    - DKImagePickerController/Resource
+  - DKImagePickerController/ImageDataManager (4.3.4)
+  - DKImagePickerController/PhotoGallery (4.3.4):
+    - DKImagePickerController/Core
+    - DKPhotoGallery
+  - DKImagePickerController/Resource (4.3.4)
+  - DKPhotoGallery (0.0.17):
+    - DKPhotoGallery/Core (= 0.0.17)
+    - DKPhotoGallery/Model (= 0.0.17)
+    - DKPhotoGallery/Preview (= 0.0.17)
+    - DKPhotoGallery/Resource (= 0.0.17)
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Core (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Preview
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Model (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Preview (0.0.17):
+    - DKPhotoGallery/Model
+    - DKPhotoGallery/Resource
+    - SDWebImage
+    - SwiftyGif
+  - DKPhotoGallery/Resource (0.0.17):
+    - SDWebImage
+    - SwiftyGif
+  - file_picker (0.0.1):
+    - DKImagePickerController/PhotoGallery
+    - Flutter
+  - Firebase/CoreOnly (8.11.0):
+    - FirebaseCore (= 8.11.0)
+  - Firebase/Messaging (8.11.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 8.11.0)
+  - firebase_core (1.12.0):
+    - Firebase/CoreOnly (= 8.11.0)
+    - Flutter
+  - firebase_messaging (11.2.6):
+    - Firebase/Messaging (= 8.11.0)
+    - firebase_core
+    - Flutter
+  - FirebaseCore (8.11.0):
+    - FirebaseCoreDiagnostics (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+  - FirebaseCoreDiagnostics (8.15.0):
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Logger (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - FirebaseInstallations (8.15.0):
+    - FirebaseCore (~> 8.0)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - FirebaseMessaging (8.11.0):
+    - FirebaseCore (~> 8.0)
+    - FirebaseInstallations (~> 8.0)
+    - GoogleDataTransport (~> 9.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
+    - GoogleUtilities/Environment (~> 7.7)
+    - GoogleUtilities/Reachability (~> 7.7)
+    - GoogleUtilities/UserDefaults (~> 7.7)
+    - nanopb (~> 2.30908.0)
+  - Flutter (1.0.0)
+  - flutter_apns_only (0.0.1):
+    - Flutter
+  - flutter_image_compress (1.0.0):
+    - Flutter
+    - Mantle
+    - SDWebImage
+    - SDWebImageWebPCoder
+  - flutter_local_notifications (0.0.1):
+    - Flutter
+  - flutter_plugin_record_plus (0.0.1):
+    - Flutter
+  - FlutterPluginRegistrant (0.0.1):
+    - camera_avfoundation
+    - disk_space
+    - file_picker
+    - firebase_core
+    - firebase_messaging
+    - Flutter
+    - flutter_apns_only
+    - flutter_image_compress
+    - flutter_local_notifications
+    - flutter_plugin_record_plus
+    - fluttertoast
+    - image_gallery_saver
+    - image_picker_ios
+    - open_file
+    - package_info_plus
+    - path_provider_ios
+    - permission_handler_apple
+    - photo_manager
+    - plain_notification_token
+    - shared_preferences_ios
+    - sqflite
+    - tencent_im_sdk_plugin
+    - tencent_trtc_cloud
+    - tim_ui_kit_push_plugin
+    - url_launcher_ios
+    - video_player_avfoundation
+    - video_thumbnail
+    - wakelock
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GoogleDataTransport (9.2.0):
+    - GoogleUtilities/Environment (~> 7.7)
+    - nanopb (< 2.30910.0, >= 2.30908.0)
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/AppDelegateSwizzler (7.8.0):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (7.8.0):
+    - PromisesObjC (< 3.0, >= 1.2)
+  - GoogleUtilities/Logger (7.8.0):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/Network (7.8.0):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (7.8.0)"
+  - GoogleUtilities/Reachability (7.8.0):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (7.8.0):
+    - GoogleUtilities/Logger
+  - HydraAsync (2.0.6)
+  - image_gallery_saver (1.5.0):
+    - Flutter
+  - image_picker_ios (0.0.1):
+    - Flutter
+  - libwebp (1.2.3):
+    - libwebp/demux (= 1.2.3)
+    - libwebp/mux (= 1.2.3)
+    - libwebp/webp (= 1.2.3)
+  - libwebp/demux (1.2.3):
+    - libwebp/webp
+  - libwebp/mux (1.2.3):
+    - libwebp/demux
+  - libwebp/webp (1.2.3)
+  - Mantle (2.2.0):
+    - Mantle/extobjc (= 2.2.0)
+  - Mantle/extobjc (2.2.0)
+  - nanopb (2.30908.0):
+    - nanopb/decode (= 2.30908.0)
+    - nanopb/encode (= 2.30908.0)
+  - nanopb/decode (2.30908.0)
+  - nanopb/encode (2.30908.0)
+  - open_file (0.0.1):
+    - Flutter
+  - package_info_plus (0.4.5):
+    - Flutter
+  - path_provider_ios (0.0.1):
+    - Flutter
+  - permission_handler_apple (9.0.4):
+    - Flutter
+  - photo_manager (2.0.0):
+    - Flutter
+    - FlutterMacOS
+  - plain_notification_token (0.0.1):
+    - Flutter
+  - PromisesObjC (2.1.1)
+  - SDWebImage (5.13.5):
+    - SDWebImage/Core (= 5.13.5)
+  - SDWebImage/Core (5.13.5)
+  - SDWebImageWebPCoder (0.9.1):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.13)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - sqflite (0.0.2):
+    - Flutter
+    - FMDB (>= 2.7.5)
+  - SwiftyGif (5.4.3)
+  - tencent_im_sdk_plugin (4.2.0):
+    - Flutter
+    - HydraAsync
+    - TXIMSDK_Plus_iOS (= 6.7.3184)
+  - tencent_trtc_cloud (9.5.11234):
+    - Flutter
+    - TXLiteAVSDK_Live (= 9.5.11346)
+  - tim_ui_kit_push_plugin (0.0.1):
+    - Flutter
+  - Toast (4.0.0)
+  - TXIMSDK_Plus_iOS (6.7.3184)
+  - TXLiteAVSDK_Live (9.5.11346):
+    - TXLiteAVSDK_Live/Live (= 9.5.11346)
+  - TXLiteAVSDK_Live/Live (9.5.11346)
+  - url_launcher_ios (0.0.1):
+    - Flutter
+  - video_player_avfoundation (0.0.1):
+    - Flutter
+  - video_thumbnail (0.0.1):
+    - Flutter
+    - libwebp
+  - wakelock (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - camera_avfoundation (from `../tencent_chat_module/.ios/.symlinks/plugins/camera_avfoundation/ios`)
+  - disk_space (from `../tencent_chat_module/.ios/.symlinks/plugins/disk_space/ios`)
+  - file_picker (from `../tencent_chat_module/.ios/.symlinks/plugins/file_picker/ios`)
+  - firebase_core (from `../tencent_chat_module/.ios/.symlinks/plugins/firebase_core/ios`)
+  - firebase_messaging (from `../tencent_chat_module/.ios/.symlinks/plugins/firebase_messaging/ios`)
+  - Flutter (from `../tencent_chat_module/.ios/Flutter`)
+  - flutter_apns_only (from `../tencent_chat_module/.ios/.symlinks/plugins/flutter_apns_only/ios`)
+  - flutter_image_compress (from `../tencent_chat_module/.ios/.symlinks/plugins/flutter_image_compress/ios`)
+  - flutter_local_notifications (from `../tencent_chat_module/.ios/.symlinks/plugins/flutter_local_notifications/ios`)
+  - flutter_plugin_record_plus (from `../tencent_chat_module/.ios/.symlinks/plugins/flutter_plugin_record_plus/ios`)
+  - FlutterPluginRegistrant (from `../tencent_chat_module/.ios/Flutter/FlutterPluginRegistrant`)
+  - fluttertoast (from `../tencent_chat_module/.ios/.symlinks/plugins/fluttertoast/ios`)
+  - image_gallery_saver (from `../tencent_chat_module/.ios/.symlinks/plugins/image_gallery_saver/ios`)
+  - image_picker_ios (from `../tencent_chat_module/.ios/.symlinks/plugins/image_picker_ios/ios`)
+  - open_file (from `../tencent_chat_module/.ios/.symlinks/plugins/open_file/ios`)
+  - package_info_plus (from `../tencent_chat_module/.ios/.symlinks/plugins/package_info_plus/ios`)
+  - path_provider_ios (from `../tencent_chat_module/.ios/.symlinks/plugins/path_provider_ios/ios`)
+  - permission_handler_apple (from `../tencent_chat_module/.ios/.symlinks/plugins/permission_handler_apple/ios`)
+  - photo_manager (from `../tencent_chat_module/.ios/.symlinks/plugins/photo_manager/ios`)
+  - plain_notification_token (from `../tencent_chat_module/.ios/.symlinks/plugins/plain_notification_token/ios`)
+  - shared_preferences_ios (from `../tencent_chat_module/.ios/.symlinks/plugins/shared_preferences_ios/ios`)
+  - sqflite (from `../tencent_chat_module/.ios/.symlinks/plugins/sqflite/ios`)
+  - tencent_im_sdk_plugin (from `../tencent_chat_module/.ios/.symlinks/plugins/tencent_im_sdk_plugin/ios`)
+  - tencent_trtc_cloud (from `../tencent_chat_module/.ios/.symlinks/plugins/tencent_trtc_cloud/ios`)
+  - tim_ui_kit_push_plugin (from `../tencent_chat_module/.ios/.symlinks/plugins/tim_ui_kit_push_plugin/ios`)
+  - url_launcher_ios (from `../tencent_chat_module/.ios/.symlinks/plugins/url_launcher_ios/ios`)
+  - video_player_avfoundation (from `../tencent_chat_module/.ios/.symlinks/plugins/video_player_avfoundation/ios`)
+  - video_thumbnail (from `../tencent_chat_module/.ios/.symlinks/plugins/video_thumbnail/ios`)
+  - wakelock (from `../tencent_chat_module/.ios/.symlinks/plugins/wakelock/ios`)
+
+SPEC REPOS:
+  trunk:
+    - DKImagePickerController
+    - DKPhotoGallery
+    - Firebase
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - FMDB
+    - GoogleDataTransport
+    - GoogleUtilities
+    - HydraAsync
+    - libwebp
+    - Mantle
+    - nanopb
+    - PromisesObjC
+    - SDWebImage
+    - SDWebImageWebPCoder
+    - SwiftyGif
+    - Toast
+    - TXIMSDK_Plus_iOS
+    - TXLiteAVSDK_Live
+
+EXTERNAL SOURCES:
+  camera_avfoundation:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/camera_avfoundation/ios"
+  disk_space:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/disk_space/ios"
+  file_picker:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/file_picker/ios"
+  firebase_core:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/firebase_core/ios"
+  firebase_messaging:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/firebase_messaging/ios"
+  Flutter:
+    :path: "../tencent_chat_module/.ios/Flutter"
+  flutter_apns_only:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/flutter_apns_only/ios"
+  flutter_image_compress:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/flutter_image_compress/ios"
+  flutter_local_notifications:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/flutter_local_notifications/ios"
+  flutter_plugin_record_plus:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/flutter_plugin_record_plus/ios"
+  FlutterPluginRegistrant:
+    :path: "../tencent_chat_module/.ios/Flutter/FlutterPluginRegistrant"
+  fluttertoast:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/fluttertoast/ios"
+  image_gallery_saver:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/image_gallery_saver/ios"
+  image_picker_ios:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/image_picker_ios/ios"
+  open_file:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/open_file/ios"
+  package_info_plus:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/package_info_plus/ios"
+  path_provider_ios:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/path_provider_ios/ios"
+  permission_handler_apple:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/permission_handler_apple/ios"
+  photo_manager:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/photo_manager/ios"
+  plain_notification_token:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/plain_notification_token/ios"
+  shared_preferences_ios:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/shared_preferences_ios/ios"
+  sqflite:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/sqflite/ios"
+  tencent_im_sdk_plugin:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/tencent_im_sdk_plugin/ios"
+  tencent_trtc_cloud:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/tencent_trtc_cloud/ios"
+  tim_ui_kit_push_plugin:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/tim_ui_kit_push_plugin/ios"
+  url_launcher_ios:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/url_launcher_ios/ios"
+  video_player_avfoundation:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/video_player_avfoundation/ios"
+  video_thumbnail:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/video_thumbnail/ios"
+  wakelock:
+    :path: "../tencent_chat_module/.ios/.symlinks/plugins/wakelock/ios"
+
+SPEC CHECKSUMS:
+  camera_avfoundation: 07c77549ea54ad95d8581be86617c094a46280d9
+  disk_space: e94d34bbdf77954adfb39e60bde9cc5c7233eda6
+  DKImagePickerController: b512c28220a2b8ac7419f21c491fc8534b7601ac
+  DKPhotoGallery: fdfad5125a9fdda9cc57df834d49df790dbb4179
+  file_picker: 817ab1d8cd2da9d2da412a417162deee3500fc95
+  Firebase: 44dd9724c84df18b486639e874f31436eaa9a20c
+  firebase_core: 443bccfd6aa6b42f07be365b500773dc69db2d87
+  firebase_messaging: 8dc3a6f069774a0bf4dac04dd79fdaffcb62e145
+  FirebaseCore: 2f4f85b453cc8fea4bb2b37e370007d2bcafe3f0
+  FirebaseCoreDiagnostics: 92e07a649aeb66352b319d43bdd2ee3942af84cb
+  FirebaseInstallations: 40bd9054049b2eae9a2c38ef1c3dd213df3605cd
+  FirebaseMessaging: 02e248e8997f71fa8cc9d78e9d49ec1a701ba14a
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  flutter_apns_only: 3d91c0ca9dbef4439874858590909a19f8ed06a4
+  flutter_image_compress: 5a5e9aee05b6553048b8df1c3bc456d0afaac433
+  flutter_local_notifications: 0c0b1ae97e741e1521e4c1629a459d04b9aec743
+  flutter_plugin_record_plus: 79b8e13ee7ed9a94f6c067018653599528cee1fc
+  FlutterPluginRegistrant: 53948618039ace8d2dffe23435dc7d3501f9a347
+  fluttertoast: 74526702fea2c060ea55dde75895b7e1bde1c86b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
+  GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
+  HydraAsync: 8d589bd725b0224f899afafc9a396327405f8063
+  image_gallery_saver: 259eab68fb271cfd57d599904f7acdc7832e7ef2
+  image_picker_ios: b786a5dcf033a8336a657191401bfdf12017dabb
+  libwebp: 60305b2e989864154bd9be3d772730f08fc6a59c
+  Mantle: c5aa8794a29a022dfbbfc9799af95f477a69b62d
+  nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
+  open_file: 02eb5cb6b21264bd3a696876f5afbfb7ca4f4b7d
+  package_info_plus: 6c92f08e1f853dc01228d6f553146438dafcd14e
+  path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
+  permission_handler_apple: 44366e37eaf29454a1e7b1b7d736c2cceaeb17ce
+  photo_manager: 4f6810b7dfc4feb03b461ac1a70dacf91fba7604
+  plain_notification_token: b36467dc91939a7b6754267c701bbaca14996ee1
+  PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  SDWebImage: 23d714cd599354ee7906dbae26dff89b421c4370
+  SDWebImageWebPCoder: 18503de6621dd2c420d680e33d46bf8e1d5169b0
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  sqflite: 6d358c025f5b867b29ed92fc697fd34924e11904
+  SwiftyGif: 6c3eafd0ce693cad58bb63d2b2fb9bacb8552780
+  tencent_im_sdk_plugin: 5b9995c539b8ac7360851e447a615268bfcc2d50
+  tencent_trtc_cloud: a717270754b3519b473b513b967c0b88b233aa45
+  tim_ui_kit_push_plugin: 37913e565d11c4841c254711cba35a3d5b17b02d
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  TXIMSDK_Plus_iOS: 5412f55a77f058b2b5a8575900334daccbae3b08
+  TXLiteAVSDK_Live: cae30145d70254bdd35838569fcdfefd3a369aa0
+  url_launcher_ios: 839c58cdb4279282219f5e248c3321761ff3c4de
+  video_player_avfoundation: e489aac24ef5cf7af82702979ed16f2a5ef84cff
+  video_thumbnail: c4e2a3c539e247d4de13cd545344fd2d26ffafd1
+  wakelock: d0fc7c864128eac40eba1617cb5264d9c940b46f
+
+PODFILE CHECKSUM: 4938220c5a512eea1be858ed1e0e9d093738dec7
+
+COCOAPODS: 1.11.3
