@@ -9,13 +9,17 @@ android {
     defaultConfig {
         applicationId "dev.flutter.example.androidfullscreen"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
     buildTypes {
+        // Used for Option A - Depend on the Android Archive (AAR)
+//        profile {
+//            initWith debug
+//        }
         release {
             minifyEnabled false
             signingConfig debug.signingConfig
@@ -26,6 +30,17 @@ android {
         targetCompatibility 1.8
     }
 }
+
+// Used for Option A - Depend on the Android Archive (AAR)
+//repositories {
+//    maven {
+//        url '/Users/wangrunlin/Documents/GitHub/tencentchat-add-flutter-to-app/Single Flutter Engines/tencent_chat_module/build/host/outputs/repo'
+//    }
+//    maven {
+//        url "$storageUrl/download.flutter.io"
+//    }
+//}
+
 
 dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
@@ -40,4 +55,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     api 'androidx.test:core:1.2.0'
+
+    // Used for Option A - Depend on the Android Archive (AAR)
+//    debugImplementation 'com.tencent.chat.flutter.module:flutter:1.0:debug'
+//    profileImplementation 'com.tencent.chat.flutter.module:flutter:1.0:profile'
+//    releaseImplementation 'com.tencent.chat.flutter.module:flutter:1.0:release'
 }

@@ -42,5 +42,5 @@ flutter:
   # identifiers, which may be completely independent or the same as these.
   module:
     androidX: true
-    androidPackage: dev.flutter.example.tencent_chat_module
-    iosBundleIdentifier: dev.flutter.example.flutterModule
+    androidPackage: com.tencent.chat.flutter.module
+    iosBundleIdentifier: com.tencent.chat.flutter.module
