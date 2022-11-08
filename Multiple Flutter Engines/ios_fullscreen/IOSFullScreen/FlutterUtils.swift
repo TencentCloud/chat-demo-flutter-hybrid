@@ -48,6 +48,30 @@ class FlutterUtils: NSObject {
         super.init()
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
         
+        // Flutter - Call
+        callingFlutterEngine = appDelegate.flutterEngines.makeEngine(withEntrypoint: "callMain", libraryURI: nil)
+        GeneratedPluginRegistrant.register(with: callingFlutterEngine!)
+        callMethodChannel = FlutterMethodChannel(name: "com.tencent.flutter.call",
+                                                 binaryMessenger: callingFlutterEngine!.binaryMessenger)
+        callMethodChannel?.setMethodCallHandler({ [weak self]
+            (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
+            if let strongSelf = self {
+                switch(call.method) {
+                case "requestCallInfo":
+                    strongSelf.reportCallInfo()
+                    break
+                case "launchCall":
+                    strongSelf.launchCallFunc()
+                    break
+                case "endCall":
+                    strongSelf.endCallFunc()
+                    break
+                default:
+                    print("Unrecognized method name: \(call.method)")
+                }
+            }
+        })
+        
         // Flutter - Chat
         chatFlutterEngine = appDelegate.flutterEngines.makeEngine(withEntrypoint: "chatMain", libraryURI: nil)
         GeneratedPluginRegistrant.register(with: chatFlutterEngine!)
@@ -68,30 +92,6 @@ class FlutterUtils: NSObject {
                     break
                 case "videoCall":
                     strongSelf.triggerVideoCall(callInfo: call.arguments as! String)
-                    break
-                default:
-                    print("Unrecognized method name: \(call.method)")
-                }
-            }
-        })
-        
-        // Flutter - Call
-        callingFlutterEngine = appDelegate.flutterEngines.makeEngine(withEntrypoint: "callMain", libraryURI: nil)
-        GeneratedPluginRegistrant.register(with: callingFlutterEngine!)
-        callMethodChannel = FlutterMethodChannel(name: "com.tencent.flutter.call",
-                                                 binaryMessenger: callingFlutterEngine!.binaryMessenger)
-        callMethodChannel?.setMethodCallHandler({ [weak self]
-            (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
-            if let strongSelf = self {
-                switch(call.method) {
-                case "requestCallInfo":
-                    strongSelf.reportCallInfo()
-                    break
-                case "launchCall":
-                    strongSelf.launchCallFunc()
-                    break
-                case "endCall":
-                    strongSelf.endCallFunc()
                     break
                 default:
                     print("Unrecognized method name: \(call.method)")
