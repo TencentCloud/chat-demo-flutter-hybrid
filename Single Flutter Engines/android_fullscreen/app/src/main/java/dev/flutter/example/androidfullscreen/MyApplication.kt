@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package dev.flutter.example.androidfullscreen
+package com.tencent.chat.android
 
 import androidx.multidex.MultiDexApplication
 import io.flutter.embedding.engine.FlutterEngine
@@ -14,8 +14,7 @@ class MyApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        FlutterUtils.context = this
-        FlutterUtils.init()
+        FlutterUtils
     }
 
 }

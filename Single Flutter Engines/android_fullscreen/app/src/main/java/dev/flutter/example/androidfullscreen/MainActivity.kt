@@ -2,7 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-package dev.flutter.example.androidfullscreen
+package com.tencent.chat.android
 
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +14,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        FlutterUtils.context = this
+        FlutterUtils.init()
+
         setContentView(R.layout.activity_main)
 
         val button = findViewById<Button>(R.id.launch_button)

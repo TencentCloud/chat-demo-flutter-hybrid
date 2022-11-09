@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 33
     defaultConfig {
-        applicationId "dev.flutter.example.androidfullscreen"
+        applicationId "com.tencent.chat.android"
         minSdkVersion 24
         targetSdkVersion 33
         versionCode 1
@@ -43,7 +43,10 @@ android {
 
 
 dependencies {
-    implementation 'com.squareup.moshi:moshi:1.8.0'
+//    implementation "com.squareup.moshi:moshi:1.12.0"
+//    implementation "com.squareup.moshi:moshi-kotlin:1.12.0"
+//    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation "com.google.code.gson:gson:2.8.5"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation project(':flutter')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="dev.flutter.example.androidfullscreen">
+    package="com.tencent.chat.android">
 
     <!-- Include Cleartext traffic for the espresso package -->
 
