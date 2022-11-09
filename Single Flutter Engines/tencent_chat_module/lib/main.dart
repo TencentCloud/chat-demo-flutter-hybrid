@@ -62,7 +62,7 @@ class ChatInfoModel extends ChangeNotifier {
   final TUICalling _calling = TUICalling();
   late TUICallingListener _onRtcListener;
   final Lock lock = Lock();
-  final _channel = const MethodChannel('com.tencent.chat/add-to-ios');
+  final _channel = const MethodChannel('com.tencent.chat/add-to-app');
   final TIMUIKitChatController _timuiKitChatController =
   TIMUIKitChatController();
   final PushAppInfo appInfo = PushAppInfo(

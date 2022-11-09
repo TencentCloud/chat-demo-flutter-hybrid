@@ -39,7 +39,7 @@ class FlutterUtils: NSObject {
     private override init() {
         super.init()
         if let flutterEngine = (UIApplication.shared.delegate as? AppDelegate)?.flutterEngine {
-            methodChannel = FlutterMethodChannel(name: "com.tencent.chat/add-to-ios",
+            methodChannel = FlutterMethodChannel(name: "com.tencent.chat/add-to-app",
                                                  binaryMessenger: flutterEngine.binaryMessenger)
             methodChannel?.setMethodCallHandler({ [weak self]
                 (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
