@@ -710,13 +710,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  open_file:
-    dependency: transitive
-    description:
-      name: open_file
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.2.1"
   package_config:
     dependency: transitive
     description:
@@ -1142,6 +1135,13 @@ packages:
       relative: true
     source: path
     version: "0.3.5"
+  tencent_open_file:
+    dependency: transitive
+    description:
+      name: tencent_open_file
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.8"
   tencent_trtc_cloud:
     dependency: transitive
     description:

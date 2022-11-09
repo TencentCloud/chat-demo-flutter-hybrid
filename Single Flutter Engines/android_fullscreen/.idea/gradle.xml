@@ -27,7 +27,6 @@
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/huawei_push-6.3.0+304/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_android-0.8.5+3/android" />
-            <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/open_file-3.2.1/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.2/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.21/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_android-10.2.0/android" />
@@ -35,6 +34,7 @@
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/plain_notification_token-0.0.4/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.0.14/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.2.0+3/android" />
+            <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/tencent_open_file-4.0.8/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/tencent_trtc_cloud-2.2.4/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/tim_ui_kit_push_plugin-0.4.7/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_android-6.0.21/android" />
