@@ -1,16 +1,13 @@
 package com.tencent.chat.android
 
 import android.annotation.SuppressLint
+import android.app.Instrumentation
 import android.content.Context
 import android.content.Intent
+import android.view.KeyEvent
 import com.google.gson.Gson
-import dev.flutter.example.androidfullscreen.CallFlutterActivity
-import dev.flutter.example.androidfullscreen.RECEIVER_ACTION_FINISH
 import io.flutter.FlutterInjector
-
 import io.flutter.embedding.android.FlutterActivity
-import io.flutter.embedding.android.FlutterActivity.withCachedEngine
-import io.flutter.embedding.android.FlutterFragment.withCachedEngine
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.FlutterEngineGroup
@@ -120,9 +117,16 @@ object FlutterUtils {
     }
 
     fun endCallFunc() {
-        val intent: Intent = Intent(RECEIVER_ACTION_FINISH)
-        context.sendBroadcast(intent)
-
+        object : Thread() {
+            override fun run() {
+                try {
+                    val inst = Instrumentation()
+                    inst.sendKeyDownUpSync(KeyEvent.KEYCODE_BACK)
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+        }.start()
     }
 
     fun triggerVoiceCall(callInfo: String) {
