@@ -46,6 +46,9 @@ object FlutterUtils {
                 "requestChatInfo" -> {
                     reportChatInfo()
                 }
+                "launchChat" -> {
+                    launchChatFunc()
+                }
             }
         }
     }
