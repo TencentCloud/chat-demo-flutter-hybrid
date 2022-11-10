@@ -23,7 +23,7 @@ class ChatInfoModel extends ChangeNotifier {
 
   ChatInfoModel() {
     _channel.setMethodCallHandler(_handleMessage);
-    _channel.invokeMethod<void>('requestCallInfo');
+    _channel.invokeMethod<void>('requestChatInfo');
   }
 
   ChatInfo? _chatInfo;
@@ -74,8 +74,10 @@ class ChatInfoModel extends ChangeNotifier {
   }
 
   Future<dynamic> _handleMessage(MethodCall call) async {
+    print("_handleMessage");
     if (call.method == 'reportChatInfo') {
       final jsonString = call.arguments as String;
+      print("_handleMessage reportChatInfo $jsonString");
       try{
         final Map<String, dynamic> chatInfoMap = jsonDecode(jsonString) as Map<String, dynamic>;
         chatInfo = ChatInfo.fromJSON(chatInfoMap);

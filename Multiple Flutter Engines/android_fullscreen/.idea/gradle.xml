@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
@@ -8,7 +9,8 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/../../../../im-flutter-plugin/tencent_im_sdk_plugin/android" />
+            <option value="$PROJECT_DIR$/../../../im-flutter-plugin/tencent_im_sdk_plugin/android" />
+            <option value="$PROJECT_DIR$/../../../tencent_open_file/android" />
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/../tencent_chat_module/.android/Flutter" />
@@ -26,7 +28,6 @@
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/huawei_push-6.3.0+304/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_gallery_saver-1.7.1/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker_android-0.8.5+3/android" />
-            <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/open_file-3.2.1/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/package_info_plus-1.4.2/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.21/android" />
             <option value="$USER_HOME$/development/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler_android-10.2.0/android" />

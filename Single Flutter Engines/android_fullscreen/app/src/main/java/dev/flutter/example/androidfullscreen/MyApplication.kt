@@ -14,7 +14,8 @@ class MyApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
-        FlutterUtils
+        FlutterUtils.context = this
+        FlutterUtils.init()
     }
 
 }

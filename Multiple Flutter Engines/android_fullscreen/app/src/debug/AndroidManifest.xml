@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.flutter.example.androidfullscreen">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.tencent.chat.android">
 
     <!-- Include Cleartext traffic for the espresso package -->
 
-    <application android:usesCleartextTraffic="true" />
+    <application tools:replace="android:allowBackup"
+        android:allowBackup="true" android:usesCleartextTraffic="true" />
 
 </manifest>

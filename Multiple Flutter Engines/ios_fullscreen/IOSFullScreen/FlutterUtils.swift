@@ -37,7 +37,7 @@ class FlutterUtils: NSObject {
     var callMethodChannel : FlutterMethodChannel?
     
     var chatFlutterEngine : FlutterEngine?
-    var callingFlutterEngine : FlutterEngine?
+    var callFlutterEngine : FlutterEngine?
     
     var chatInfo: ChatInfo = ChatInfo()
     var mainView: UIViewController?
@@ -76,10 +76,10 @@ class FlutterUtils: NSObject {
         })
         
         // Flutter - Call
-        callingFlutterEngine = appDelegate.flutterEngines.makeEngine(withEntrypoint: "callMain", libraryURI: nil)
-        GeneratedPluginRegistrant.register(with: callingFlutterEngine!)
+        callFlutterEngine = appDelegate.flutterEngines.makeEngine(withEntrypoint: "callMain", libraryURI: nil)
+        GeneratedPluginRegistrant.register(with: callFlutterEngine!)
         callMethodChannel = FlutterMethodChannel(name: "com.tencent.flutter.call",
-                                                 binaryMessenger: callingFlutterEngine!.binaryMessenger)
+                                                 binaryMessenger: callFlutterEngine!.binaryMessenger)
         callMethodChannel?.setMethodCallHandler({ [weak self]
             (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             if let strongSelf = self {
@@ -128,15 +128,15 @@ class FlutterUtils: NSObject {
     }
     
     func launchCallFunc(){
-        if self.callingFlutterEngine != nil && self.callingFlutterEngine!.viewController == nil {
-            let flutterViewController = FlutterViewController(engine: self.callingFlutterEngine!, nibName: nil, bundle: nil)
+        if self.callFlutterEngine != nil && self.callFlutterEngine!.viewController == nil {
+            let flutterViewController = FlutterViewController(engine: self.callFlutterEngine!, nibName: nil, bundle: nil)
             mainView?.present(flutterViewController, animated: true, completion: nil)
         }
     }
     
     func endCallFunc(){
-        if self.callingFlutterEngine != nil && self.callingFlutterEngine!.viewController != nil {
-            self.callingFlutterEngine!.viewController?.dismiss(animated: true, completion: nil)
+        if self.callFlutterEngine != nil && self.callFlutterEngine!.viewController != nil {
+            self.callFlutterEngine!.viewController?.dismiss(animated: true, completion: nil)
         }
     }
     

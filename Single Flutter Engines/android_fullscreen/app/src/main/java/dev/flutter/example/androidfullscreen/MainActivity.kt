@@ -15,9 +15,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        FlutterUtils.context = this
-        FlutterUtils.init()
-
         setContentView(R.layout.activity_main)
 
         val button = findViewById<Button>(R.id.launch_button)
