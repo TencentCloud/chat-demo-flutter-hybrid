@@ -4,9 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import com.google.gson.Gson
+import dev.flutter.example.androidfullscreen.CallFlutterActivity
+import dev.flutter.example.androidfullscreen.RECEIVER_ACTION_FINISH
 import io.flutter.FlutterInjector
 
 import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterActivity.withCachedEngine
+import io.flutter.embedding.android.FlutterFragment.withCachedEngine
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.FlutterEngineGroup
@@ -59,6 +63,12 @@ object FlutterUtils {
                 "launchChat" -> {
                     launchChatFunc()
                 }
+                "voiceCall" -> {
+                    triggerVoiceCall(call.arguments as String)
+                }
+                "videoCall" -> {
+                    triggerVideoCall(call.arguments as String)
+                }
             }
         }
 
@@ -72,25 +82,56 @@ object FlutterUtils {
         callMethodChannel = MethodChannel(callFlutterEngine.dartExecutor, "com.tencent.flutter.call")
         callMethodChannel.setMethodCallHandler { call, _ ->
             when (call.method) {
-                "requestChatInfo" -> {
-                    reportChatInfo()
+                "requestCallInfo" -> {
+                    reportCallInfo()
                 }
-                "launchChat" -> {
-                    launchChatFunc()
+                "launchCall" -> {
+                    launchCallFunc()
+                }
+                "endCall" -> {
+                    endCallFunc()
                 }
             }
         }
     }
 
     private fun reportChatInfo() {
-//        channel.invokeMethod("reportChatInfo", moshi.adapter(ChatInfo::class.java).toJson(chatInfo))
         chatMethodChannel.invokeMethod("reportChatInfo", gson.toJson(chatInfo))
+    }
+
+    private fun reportCallInfo() {
+        callMethodChannel.invokeMethod("reportCallInfo", gson.toJson(chatInfo))
     }
 
     fun launchChatFunc() {
         val intent = FlutterActivity
             .withCachedEngine(CHAT_ENGINE_ID)
             .build(context).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
         context.startActivity(intent)
+    }
+
+    fun launchCallFunc() {
+        val intent = FlutterActivity
+            .withCachedEngine(CALL_ENGINE_ID)
+            .build(context).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+
+        context.startActivity(intent)
+    }
+
+    fun endCallFunc() {
+        val intent: Intent = Intent(RECEIVER_ACTION_FINISH)
+        context.sendBroadcast(intent)
+
+    }
+
+    fun triggerVoiceCall(callInfo: String) {
+        callMethodChannel.invokeMethod("voiceCall", callInfo)
+        launchCallFunc()
+    }
+
+    fun triggerVideoCall(callInfo: String) {
+        callMethodChannel.invokeMethod("videoCall", callInfo)
+        launchCallFunc()
     }
 }
