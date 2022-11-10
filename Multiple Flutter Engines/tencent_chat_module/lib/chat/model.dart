@@ -18,7 +18,10 @@ class ChatInfoModel extends ChangeNotifier {
   final TIMUIKitChatController _timuiKitChatController =
   TIMUIKitChatController();
   final PushAppInfo appInfo = PushAppInfo(
-      apple_buz_id: 35763
+      oppo_buz_id: 26654,
+      oppo_app_key: "4c2a7b09bb8b404cbf981aeedf0e6c3f",
+      oppo_app_secret: "d99a991eed804a06b26fa3d800abd375",
+      oppo_app_id: "30908339"
   );
 
   ChatInfoModel() {
@@ -105,6 +108,8 @@ class ChatInfoModel extends ChangeNotifier {
         print("Push Click $msg");
         handleClickNotification(msg);
       }, appInfo);
+
+      ChannelPush.requestPermission();
 
       final tokenRes = await ChannelPush.uploadToken(appInfo);
       print("Push Upload Result $tokenRes");

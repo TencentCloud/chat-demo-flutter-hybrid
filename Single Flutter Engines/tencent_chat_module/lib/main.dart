@@ -13,8 +13,10 @@ import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:tim_ui_kit/business_logic/view_models/tui_chat_global_model.dart';
+import 'package:tim_ui_kit/data_services/core/core_services.dart';
 import 'package:tim_ui_kit/tim_ui_kit.dart';
 import 'package:tim_ui_kit/ui/controller/tim_uikit_chat_controller.dart';
+import 'package:tim_ui_kit/ui/utils/platform.dart';
 import 'package:tim_ui_kit_calling_plugin/model/TIMUIKitCallingListener.dart';
 import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
 import 'package:tim_ui_kit_push_plugin/model/appInfo.dart';
@@ -208,8 +210,62 @@ class ChatInfoModel extends ChangeNotifier {
 ///
 /// It offers two routes, one suitable for displaying as a full screen and
 /// another designed to be part of a larger UI.class MyApp extends StatelessWidget {
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  final CoreServicesImpl _coreInstance = TIMUIKitCore.getInstance();
+
+  final V2TIMManager _sdkInstance = TIMUIKitCore.getSDKInstance();
+
+  Future<int?> _getTotalUnreadCount() async {
+    final res = await _sdkInstance
+        .getConversationManager()
+        .getTotalUnreadMessageCount();
+    if (res.code == 0) {
+      return res.data ?? 0;
+    }
+    return null;
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) async {
+    if (PlatformUtils().isIOS) {
+      return;
+    }
+    print("--" + state.toString());
+    int? unreadCount = await _getTotalUnreadCount();
+    switch (state) {
+      case AppLifecycleState.inactive:
+        _coreInstance.setOfflinePushStatus(
+            status: AppStatus.background, totalCount: unreadCount);
+        if (unreadCount != null) {
+          ChannelPush.setBadgeNum(unreadCount);
+        }
+        break;
+      case AppLifecycleState.resumed:
+        _coreInstance.setOfflinePushStatus(status: AppStatus.foreground);
+        break;
+      case AppLifecycleState.paused:
+        _coreInstance.setOfflinePushStatus(
+            status: AppStatus.background, totalCount: unreadCount);
+        break;
+      case AppLifecycleState.detached:
+      // ignore: todo
+      // TODO: Handle this case.
+        break;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance?.addObserver(this);
+  }
 
   @override
   Widget build(BuildContext context) {

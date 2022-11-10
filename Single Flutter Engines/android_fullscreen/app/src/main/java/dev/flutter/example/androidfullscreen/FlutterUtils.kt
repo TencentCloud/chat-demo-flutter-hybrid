@@ -65,4 +65,9 @@ object FlutterUtils {
         context.startActivity(intent)
     }
 
+    fun triggerNotification(msg: String){
+        launchChatFunc()
+        channel.invokeMethod("notification", msg)
+    }
+
 }

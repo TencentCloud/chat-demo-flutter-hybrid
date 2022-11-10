@@ -30,7 +30,7 @@ void chatMain() {
   runApp(
     ChangeNotifierProvider.value(
       value: model,
-      child: const ChatAPP(),
+      child: ChatAPP(),
     ),
   );
 }

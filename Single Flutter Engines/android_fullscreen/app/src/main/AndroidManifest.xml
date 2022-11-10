@@ -25,4 +25,7 @@
             android:windowSoftInputMode="adjustResize" />
     </application>
 
+    <uses-permission android:name="com.coloros.mcs.permission.RECIEVE_MCS_MESSAGE" />
+    <uses-permission android:name="com.heytap.mcs.permission.RECIEVE_MCS_MESSAGE" />
+
 </manifest>

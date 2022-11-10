@@ -138,4 +138,9 @@ object FlutterUtils {
         callMethodChannel.invokeMethod("videoCall", callInfo)
         launchCallFunc()
     }
+
+    fun triggerNotification(msg: String){
+        launchChatFunc()
+        chatMethodChannel.invokeMethod("notification", msg)
+    }
 }

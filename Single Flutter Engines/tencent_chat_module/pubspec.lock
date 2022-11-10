@@ -1190,7 +1190,7 @@ packages:
       name: tim_ui_kit_push_plugin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.7"
+    version: "0.4.10+2"
   timezone:
     dependency: transitive
     description:
