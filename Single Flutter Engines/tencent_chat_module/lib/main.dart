@@ -255,8 +255,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             status: AppStatus.background, totalCount: unreadCount);
         break;
       case AppLifecycleState.detached:
-      // ignore: todo
-      // TODO: Handle this case.
         break;
     }
   }
