@@ -1,21 +1,19 @@
-# Single Flutter Engine
+## Multiple Flutter Engine
 
-Embeds a single full screen instance of Flutter into an existing iOS or Android app.
+This is a sample that shows how to use the Flutter Engine Groups API to embed multiple instances of Flutter into an existing Android or iOS project.
 
-## Description
+## Requirements
 
-These apps showcase a relatively straightforward integration of
-`tencent_chat_module`:
+* Flutter
+* Android
+  * Android Studio
+* iOS
+  * Xcode
+  * Cocoapods
 
-* The Flutter module is built along with the app when the app is built.
-* The Flutter engine is warmed up at app launch.
-* The Flutter view is presented with a full-screen Activity or
-  UIViewController.
-* The Flutter view is a navigational leaf node; it does not launch any new,
-  native Activities or UIViewControllers in response to user actions.
+## Flutter Engine Group
 
-If you are new to Flutter's add-to-app APIs, these projects are a great place
-to begin learning how to use them.
+These examples use the Flutter Engine Group APIs on the host platform which allows engines to share memory and CPU intensive resources. This leads to easier embedding of Flutter into an existing app since multiple entrypoints can be maintained via a FlutterFragment on Android or a UIViewController on iOS. Before FlutterEngineGroup, users had to juggle the usage of a small number of engines judiciously.
 
 ## tl;dr
 
@@ -39,15 +37,6 @@ you're building for both iOS and Android, with both toolchains installed):
   pod install
   open IOSFullScreen.xcworkspace
 ```
-
-## Requirements
-
-* Flutter
-* Android
-  * Android Studio
-* iOS
-  * Xcode
-  * Cocoapods
 
 ## Contact Us
 
