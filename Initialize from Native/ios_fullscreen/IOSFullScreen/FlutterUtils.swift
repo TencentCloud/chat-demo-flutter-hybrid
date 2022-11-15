@@ -11,13 +11,15 @@ import Flutter
 import Photos
 import ImSDK_Plus
 
+// Please generate `userSig` in your project, recommended on your server, while the hard code here is only for demonstration purpose.
+// 实际项目中，这里的userSig必须动态获取，最好通过服务端获取。这里的写死，仅用于演示。
 struct ChatInfo: Codable {
-    var sdkappid: String = "1400187352"
-    var userSig: String = "eJwtjNEKgjAYRt9l1yH-Nrc1oZtAFiMKppG3gtN*oppmIUTvnqnf3XcOnA-J91n09h1JCIuArKaPlb-3WOOEKUAsuOSLe1bXMgSsSEJjALpWXLDZ9HjzI5VSMQ2KiZn6IWA3cgn-LQ1sxrDP09aEBz8O5rQtnDlc2rPNito1u5d2QQffc2WstGW6Id8ftfwweg__"
-    var userID: String = "10045363"
+    var sdkappid: String = ""
+    var userSig: String = ""
+    var userID: String = ""
 }
 
-public extension Encodable {qing
+public extension Encodable {
     func toJSONString() -> String {
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
@@ -73,7 +75,7 @@ class FlutterUtils: NSObject {
         if(isLoginSuccess == true){
             return
         }
-        let data = V2TIMManager.sharedInstance().initSDK(1400187352, config: nil);
+        let data = V2TIMManager.sharedInstance().initSDK(self.chatInfo.sdkappid, config: nil);
         if (data == true){
             V2TIMManager.sharedInstance().login(
                 chatInfo.userID,

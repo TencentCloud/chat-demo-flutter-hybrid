@@ -4,12 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import com.google.gson.Gson
-
+import com.tencent.imsdk.v2.V2TIMSDKConfig
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.embedding.engine.FlutterEngineCache
 import io.flutter.embedding.engine.dart.DartExecutor
 import io.flutter.plugin.common.MethodChannel
+
 
 const val ENGINE_ID = "com.tencent.flutter"
 
@@ -19,10 +20,12 @@ data class ChatInfo(
     val userID: String?,
 )
 
+// Please generate `userSig` in your project, recommended on your server, while the hard code here is only for demonstration purpose.
+// 实际项目中，这里的userSig必须动态获取，最好通过服务端获取。这里的写死，仅用于演示。
 val chatInfo: ChatInfo = ChatInfo(
-    "1400187352",
-    "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwpam5gYWpqZGFlDJ4pTsxIKCzBQlK0MTAwNDC3NjUyOITElmbipQ1MzMHChoaWQIEU2tKMgsAoqbGYAA1IzMdKDJxua5ZV4ZiVmGoX6BHjnJiU6lSdrGPnmlpiF*BS4mgYWOqYHZYYV*ZqHGnrZKtQDe9zCL",
-    "957085528"
+    "",
+    "",
+    ""
 )
 
 @SuppressLint("StaticFieldLeak")

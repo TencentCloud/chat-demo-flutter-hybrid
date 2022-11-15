@@ -23,10 +23,12 @@ data class ChatInfo(
     val userID: String?,
 )
 
+// Please generate `userSig` in your project, recommended on your server, while the hard code here is only for demonstration purpose.
+// 实际项目中，这里的userSig必须动态获取，最好通过服务端获取。这里的写死，仅用于演示。
 val chatInfo: ChatInfo = ChatInfo(
-    "1400187352",
-    "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwpam5gYWpqZGFlDJ4pTsxIKCzBQlK0MTAwNDC3NjUyOITElmbipQ1MzMHChoaWQIEU2tKMgsAoqbGYAA1IzMdKDJxua5ZV4ZiVmGoX6BHjnJiU6lSdrGPnmlpiF*BS4mgYWOqYHZYYV*ZqHGnrZKtQDe9zCL",
-    "957085528"
+    "",
+    "*BS4mgYWOqYHZYYV*ZqHGnrZKtQDe9zCL",
+    ""
 )
 
 @SuppressLint("StaticFieldLeak")

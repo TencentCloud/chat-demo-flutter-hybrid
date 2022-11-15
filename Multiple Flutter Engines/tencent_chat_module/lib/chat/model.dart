@@ -19,9 +19,9 @@ class ChatInfoModel extends ChangeNotifier {
   TIMUIKitChatController();
   final PushAppInfo appInfo = PushAppInfo(
       oppo_buz_id: 26654,
-      oppo_app_key: "4c2a7b09bb8b404cbf981aeedf0e6c3f",
-      oppo_app_secret: "d99a991eed804a06b26fa3d800abd375",
-      oppo_app_id: "30908339"
+      oppo_app_key: "",
+      oppo_app_secret: "",
+      oppo_app_id: ""
   );
 
   ChatInfoModel() {

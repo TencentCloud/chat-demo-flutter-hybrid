@@ -95,6 +95,7 @@ class _ChatState extends State<Chat> {
   Widget build(BuildContext context) {
     return TIMUIKitChat(
       key: tuiChatField,
+
       morePanelConfig: MorePanelConfig(
         extraAction: [
           if(!kIsWeb) MorePanelItem(

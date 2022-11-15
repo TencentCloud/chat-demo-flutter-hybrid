@@ -10,13 +10,14 @@ import UIKit
 import Flutter
 import FlutterPluginRegistrant
 import Photos
+import ImSDK_Plus
 
 struct ChatInfo: Codable {
-    // Please generate `userSig` in your project, recommended on your server, while the hard code here is only for demostration purpose.
+    // Please generate `userSig` in your project, recommended on your server, while the hard code here is only for demonstration purpose.
     // 实际项目中，这里的userSig必须动态获取，最好通过服务端获取。这里的写死，仅用于演示。
-    var sdkappid: String = "1400187352"
-    var userSig: String = "eJyrVgrxCdYrSy1SslIy0jNQ0gHzM1NS80oy0zLBwpam5gYWpqZGFlDJ4pTsxIKCzBQlK0MTAwNDC3NjUyOITElmbipQ1MzM3NjCwgwmmlpRkFkEFDczAAGoGZnpQJNDk4NMQtzKyv2NIw0qMsJTEwMtzJ1cQjwLMx3NK0rDyoudKz0zU1MCClzTbZVqAeX7MVM_"
-    var userID: String = "957085528"
+    var sdkappid: String = ""
+    var userSig: String = ""
+    var userID: String = ""
 }
 
 public extension Encodable {
