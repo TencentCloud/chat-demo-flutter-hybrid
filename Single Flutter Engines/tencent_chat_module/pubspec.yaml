@@ -11,10 +11,8 @@ dependencies:
     sdk: flutter
   loading_animation_widget: ^1.2.0+3
   provider: ^6.0.2
-#  tim_ui_kit: ^0.1.8
   tim_ui_kit_push_plugin: ^0.4.10+2
-  tim_ui_kit:
-    path: /Users/wangrunlin/Documents/GitHub/im-flutter-uikit/package_src/tim_ui_kit
+  tim_ui_kit: ^0.1.8
   tim_ui_kit_calling_plugin: ^0.4.6
   synchronized: ^3.0.0+3
 
@@ -28,8 +26,6 @@ dev_dependencies:
 
 dependency_overrides:
   firebase_core_platform_interface: 4.5.1
-  tencent_im_sdk_plugin: 
-    path: /Users/wangrunlin/Documents/GitHub/im-flutter-plugin/tencent_im_sdk_plugin
 
 flutter:
   uses-material-design: true
