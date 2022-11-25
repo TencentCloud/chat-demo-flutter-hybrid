@@ -12,11 +12,11 @@ import 'package:tencent_chat_module/push.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:tim_ui_kit/business_logic/view_models/tui_chat_global_model.dart';
-import 'package:tim_ui_kit/data_services/core/core_services.dart';
-import 'package:tim_ui_kit/tim_ui_kit.dart';
-import 'package:tim_ui_kit/ui/controller/tim_uikit_chat_controller.dart';
-import 'package:tim_ui_kit/ui/utils/platform.dart';
+import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_chat_global_model.dart';
+import 'package:tencent_cloud_chat_uikit/data_services/core/core_services.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/ui/controller/tim_uikit_chat_controller.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/platform.dart';
 import 'package:tim_ui_kit_calling_plugin/model/TIMUIKitCallingListener.dart';
 import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
 import 'package:tim_ui_kit_push_plugin/model/appInfo.dart';
@@ -49,7 +49,6 @@ class ChatInfo {
     userSig = json["userSig"].toString();
     userID = json["userID"].toString();
   }
-
 }
 
 /// A simple model that uses a [MethodChannel] as the source of truth for the
@@ -66,20 +65,18 @@ class ChatInfoModel extends ChangeNotifier {
   final Lock lock = Lock();
   final _channel = const MethodChannel('com.tencent.chat/add-to-app');
   final TIMUIKitChatController _timuiKitChatController =
-  TIMUIKitChatController();
+      TIMUIKitChatController();
   final PushAppInfo appInfo = PushAppInfo(
       apple_buz_id: 35763,
       oppo_buz_id: 26654,
       oppo_app_key: "",
       oppo_app_secret: "",
-      oppo_app_id: ""
-  );
+      oppo_app_id: "");
 
   ChatInfoModel() {
     _channel.setMethodCallHandler(_handleMessage);
     _channel.invokeMethod<void>('requestChatInfo');
-    _onRtcListener = TUICallingListener(onInvited:
-        (params) {
+    _onRtcListener = TUICallingListener(onInvited: (params) {
       _channel.invokeMethod<void>('launchChat');
     });
   }
@@ -99,7 +96,10 @@ class ChatInfoModel extends ChangeNotifier {
   set chatInfo(ChatInfo? value) {
     _chatInfo = value;
     notifyListeners();
-    if(value != null && value.sdkappid != null && value.userID != null && value.userSig != null){
+    if (value != null &&
+        value.sdkappid != null &&
+        value.userID != null &&
+        value.userSig != null) {
       Future.delayed(const Duration(seconds: 0), () => initChat());
     }
   }
@@ -108,7 +108,7 @@ class ChatInfoModel extends ChangeNotifier {
 
   Future<void> initChat() async {
     await lock.synchronized(() async {
-      if(isInit){
+      if (isInit) {
         return;
       }
       await _coreInstance.init(
@@ -139,22 +139,25 @@ class ChatInfoModel extends ChangeNotifier {
   Future<dynamic> _handleMessage(MethodCall call) async {
     if (call.method == 'reportChatInfo') {
       final jsonString = call.arguments as String;
-      try{
-        final Map<String, dynamic> chatInfoMap = jsonDecode(jsonString) as Map<String, dynamic>;
+      try {
+        final Map<String, dynamic> chatInfoMap =
+            jsonDecode(jsonString) as Map<String, dynamic>;
         chatInfo = ChatInfo.fromJSON(chatInfoMap);
-      }catch(e){
+      } catch (e) {
         print("error ${e.toString()}");
       }
-    }else if (call.method == 'notification') {
+    } else if (call.method == 'notification') {
       final jsonString = call.arguments as String;
-      try{
-        final Map<String, dynamic> notification = jsonDecode(jsonString) as Map<String, dynamic>;
-        if(isInit){
-          await handleClickNotification(jsonDecode(jsonString) as Map<String, dynamic>);
-        }else{
+      try {
+        final Map<String, dynamic> notification =
+            jsonDecode(jsonString) as Map<String, dynamic>;
+        if (isInit) {
+          await handleClickNotification(
+              jsonDecode(jsonString) as Map<String, dynamic>);
+        } else {
           notificationMap = notification;
         }
-      }catch(e){
+      } catch (e) {
         print("error ${e.toString()}");
       }
     }
@@ -301,7 +304,6 @@ class FullScreenView extends StatelessWidget {
 }
 
 class Contents extends StatelessWidget {
-
   const Contents({super.key});
 
   @override
@@ -320,13 +322,13 @@ class Contents extends StatelessWidget {
               ),
             ),
           ),
-          if(!isInit) Center(
-              child: LoadingAnimationWidget.staggeredDotsWave(
-                color: Colors.grey,
-                size: 40,
-              )
-          ),
-          if(isInit) const Conversation()
+          if (!isInit)
+            Center(
+                child: LoadingAnimationWidget.staggeredDotsWave(
+              color: Colors.grey,
+              size: 40,
+            )),
+          if (isInit) const Conversation()
         ],
       ),
     );

@@ -1,13 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tim_ui_kit/tim_ui_kit.dart';
-import 'package:tim_ui_kit/ui/utils/color.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/color.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitProfile/tim_uikit_profile.dart';
 
-class UserProfile extends StatelessWidget{
+class UserProfile extends StatelessWidget {
   final String userID;
 
   const UserProfile({super.key, required this.userID});
-
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +24,7 @@ class UserProfile extends StatelessWidget{
           padding: const EdgeInsets.only(left: 16),
           icon: Icon(
             Icons.arrow_back_ios,
-            color:
-            hexToColor("2a2e35"),
+            color: hexToColor("2a2e35"),
             size: 20,
           ),
           onPressed: () {
@@ -38,5 +35,4 @@ class UserProfile extends StatelessWidget{
       body: TIMUIKitProfile(userID: userID),
     );
   }
-
 }

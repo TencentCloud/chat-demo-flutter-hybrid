@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tim_ui_kit/ui/utils/color.dart';
-import 'package:tim_ui_kit/ui/views/TIMUIKitGroupProfile/tim_uikit_group_profile.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/color.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitGroupProfile/tim_uikit_group_profile.dart';
 
-class GroupProfile extends StatelessWidget{
+class GroupProfile extends StatelessWidget {
   final String groupID;
 
   const GroupProfile({super.key, required this.groupID});
@@ -25,8 +24,7 @@ class GroupProfile extends StatelessWidget{
           padding: const EdgeInsets.only(left: 16),
           icon: Icon(
             Icons.arrow_back_ios,
-            color:
-            hexToColor("2a2e35"),
+            color: hexToColor("2a2e35"),
             size: 20,
           ),
           onPressed: () {
@@ -37,5 +35,4 @@ class GroupProfile extends StatelessWidget{
       body: TIMUIKitGroupProfile(groupID: groupID),
     );
   }
-
 }

@@ -1114,34 +1114,62 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.4"
+  tencent_cloud_chat_sdk:
+    dependency: transitive
+    description:
+      name: tencent_cloud_chat_sdk
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.4"
+  tencent_cloud_chat_uikit:
+    dependency: "direct main"
+    description:
+      name: tencent_cloud_chat_uikit
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  tencent_extended_text:
+    dependency: transitive
+    description:
+      name: tencent_extended_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  tencent_extended_text_field:
+    dependency: transitive
+    description:
+      name: tencent_extended_text_field
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  tencent_extended_text_library:
+    dependency: transitive
+    description:
+      name: tencent_extended_text_library
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   tencent_im_base:
     dependency: transitive
     description:
       name: tencent_im_base
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.53"
-  tencent_im_sdk_plugin:
-    dependency: "direct overridden"
-    description:
-      path: "/Users/wangrunlin/Documents/GitHub/im-flutter-plugin/tencent_im_sdk_plugin"
-      relative: false
-    source: path
-    version: "4.1.9"
+    version: "1.0.2"
   tencent_im_sdk_plugin_platform_interface:
     dependency: transitive
     description:
-      path: "../../../im-flutter-plugin/tencent_im_sdk_plugin_platform_interface"
-      relative: true
-    source: path
-    version: "0.3.5"
+      name: tencent_im_sdk_plugin_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.9"
   tencent_open_file:
     dependency: transitive
     description:
-      path: "/Users/wangrunlin/Documents/GitHub/tencent_open_file"
-      relative: false
-    source: path
-    version: "4.0.8"
+      name: tencent_open_file
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.9"
   tencent_trtc_cloud:
     dependency: transitive
     description:
@@ -1170,27 +1198,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.12"
-  tim_ui_kit:
-    dependency: "direct main"
-    description:
-      path: "/Users/wangrunlin/Documents/GitHub/im-flutter-uikit/package_src/tim_ui_kit"
-      relative: false
-    source: path
-    version: "0.1.8"
   tim_ui_kit_calling_plugin:
     dependency: "direct main"
     description:
       name: tim_ui_kit_calling_plugin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.6"
+    version: "1.0.0"
   tim_ui_kit_push_plugin:
     dependency: "direct main"
     description:
       name: tim_ui_kit_push_plugin
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.10+2"
+    version: "1.0.1"
   timezone:
     dependency: transitive
     description:
