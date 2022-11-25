@@ -1,15 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:tencent_chat_module/chat/conversation.dart';
 import 'package:tencent_chat_module/chat/model.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:tencent_chat_module/chat/push.dart';
-import 'package:tim_ui_kit/data_services/core/core_services.dart';
-import 'package:tim_ui_kit/data_services/core/core_services_implements.dart';
-import 'package:tim_ui_kit/tim_ui_kit.dart';
-import 'package:tim_ui_kit/ui/utils/platform.dart';
-import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
+import 'package:tencent_cloud_chat_uikit/data_services/core/core_services.dart';
+import 'package:tencent_cloud_chat_uikit/data_services/core/core_services_implements.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/platform.dart';
 
 /// The "app" displayed by this module.
 ///
@@ -60,8 +58,8 @@ class ChatAPPState extends State<ChatAPP> with WidgetsBindingObserver {
             status: AppStatus.background, totalCount: unreadCount);
         break;
       case AppLifecycleState.detached:
-      // ignore: todo
-      // TODO: Handle this case.
+        // ignore: todo
+        // TODO: Handle this case.
         break;
     }
   }
@@ -103,7 +101,6 @@ class ChatMainView extends StatelessWidget {
 }
 
 class Contents extends StatelessWidget {
-
   const Contents({super.key});
 
   @override
@@ -121,13 +118,13 @@ class Contents extends StatelessWidget {
               ),
             ),
           ),
-          if(!isInit) Center(
-              child: LoadingAnimationWidget.staggeredDotsWave(
-                color: Colors.grey,
-                size: 40,
-              )
-          ),
-          if(isInit) const Conversation()
+          if (!isInit)
+            Center(
+                child: LoadingAnimationWidget.staggeredDotsWave(
+              color: Colors.grey,
+              size: 40,
+            )),
+          if (isInit) const Conversation()
         ],
       ),
     );

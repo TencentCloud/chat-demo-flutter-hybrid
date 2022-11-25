@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:tencent_chat_module/call/model.dart';
 import 'package:provider/provider.dart';
 import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
 
-class CallAPP extends StatelessWidget{
+class CallAPP extends StatelessWidget {
   const CallAPP({super.key});
 
   @override
@@ -27,9 +26,7 @@ class CallMainView extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.transparent
-        ),
+        decoration: const BoxDecoration(color: Colors.transparent),
       ),
     );
   }

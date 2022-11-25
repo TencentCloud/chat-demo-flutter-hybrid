@@ -9,22 +9,22 @@ class ChatInfo {
     userID = json["userID"].toString();
   }
 
-  Map<String, String> toMap(){
+  Map<String, String> toMap() {
     final Map<String, String> map = {};
-    if(sdkappid != null){
+    if (sdkappid != null) {
       map["sdkappid"] = sdkappid!;
     }
-    if(userSig != null){
+    if (userSig != null) {
       map["userSig"] = userSig!;
     }
-    if(userID != null){
+    if (userID != null) {
       map["userID"] = userID!;
     }
     return map;
   }
 }
 
-class CallInfo{
+class CallInfo {
   String? userID;
   String? groupID;
 
@@ -35,12 +35,12 @@ class CallInfo{
     userID = json["userID"].toString();
   }
 
-  Map<String, String> toMap(){
+  Map<String, String> toMap() {
     final Map<String, String> map = {};
-    if(userID != null){
+    if (userID != null) {
       map["userID"] = userID!;
     }
-    if(groupID != null){
+    if (groupID != null) {
       map["groupID"] = groupID!;
     }
     return map;

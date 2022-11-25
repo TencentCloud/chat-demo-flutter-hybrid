@@ -3,18 +3,12 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:tencent_chat_module/chat/chat.dart';
-import 'package:tencent_chat_module/chat/push.dart';
 import 'package:synchronized/synchronized.dart';
-import 'package:tim_ui_kit/business_logic/view_models/tui_chat_global_model.dart';
-import 'package:tim_ui_kit/data_services/core/core_services_implements.dart';
-import 'package:tim_ui_kit/tim_ui_kit.dart';
-import 'package:tim_ui_kit/ui/controller/tim_uikit_chat_controller.dart';
-import 'package:tim_ui_kit/ui/utils/permission.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/permission.dart';
 import 'package:tim_ui_kit_calling_plugin/enum/tim_uikit_trtc_calling_scence.dart';
 import 'package:tim_ui_kit_calling_plugin/model/TIMUIKitCallingListener.dart';
 import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
-import 'package:tim_ui_kit_push_plugin/model/appInfo.dart';
 
 import '../common/common_model.dart';
 
@@ -69,7 +63,10 @@ class CallInfoModel extends ChangeNotifier {
   set chatInfo(ChatInfo? value) {
     _chatInfo = value;
     notifyListeners();
-    if(value != null && value.sdkappid != null && value.userID != null && value.userSig != null){
+    if (value != null &&
+        value.sdkappid != null &&
+        value.userID != null &&
+        value.userSig != null) {
       Future.delayed(const Duration(seconds: 0), () => initCall());
     }
   }
@@ -78,7 +75,7 @@ class CallInfoModel extends ChangeNotifier {
 
   Future<void> initCall() async {
     await lock.synchronized(() async {
-      if(isInit){
+      if (isInit) {
         return;
       }
       isInit = true;
@@ -93,39 +90,42 @@ class CallInfoModel extends ChangeNotifier {
   Future<dynamic> _handleMessage(MethodCall call) async {
     if (call.method == 'reportCallInfo') {
       final jsonString = call.arguments as String;
-      try{
-        final Map<String, dynamic> chatInfoMap = jsonDecode(jsonString) as Map<String, dynamic>;
+      try {
+        final Map<String, dynamic> chatInfoMap =
+            jsonDecode(jsonString) as Map<String, dynamic>;
         chatInfo = ChatInfo.fromJSON(chatInfoMap);
-      }catch(e){
+      } catch (e) {
         print("error ${e.toString()}");
       }
-    } else if (call.method == 'voiceCall'){
+    } else if (call.method == 'voiceCall') {
       final jsonString = call.arguments as String;
-      try{
-        final Map<String, dynamic> callInfoMap = jsonDecode(jsonString) as Map<String, dynamic>;
+      try {
+        final Map<String, dynamic> callInfoMap =
+            jsonDecode(jsonString) as Map<String, dynamic>;
         final callInfo = CallInfo.fromJSON(callInfoMap);
         voiceCall(callInfo);
-      }catch(e){
+      } catch (e) {
         print("error ${e.toString()}");
       }
-    } else if (call.method == 'videoCall'){
+    } else if (call.method == 'videoCall') {
       final jsonString = call.arguments as String;
-      try{
-        final Map<String, dynamic> callInfoMap = jsonDecode(jsonString) as Map<String, dynamic>;
+      try {
+        final Map<String, dynamic> callInfoMap =
+            jsonDecode(jsonString) as Map<String, dynamic>;
         final callInfo = CallInfo.fromJSON(callInfoMap);
         videoCall(callInfo);
-      }catch(e){
+      } catch (e) {
         print("error ${e.toString()}");
       }
     }
   }
 
   Future<void> videoCall(CallInfo callInfo) async {
-    if(context == null){
+    if (context == null) {
       return;
     }
     final hasCameraPermission =
-    await Permissions.checkPermission(context!, Permission.camera.value);
+        await Permissions.checkPermission(context!, Permission.camera.value);
     final hasMicrophonePermission = await Permissions.checkPermission(
         context!, Permission.microphone.value);
     if (!hasCameraPermission || !hasMicrophonePermission) {
@@ -145,13 +145,13 @@ class CallInfoModel extends ChangeNotifier {
         ignoreIOSBadge: false,
       );
 
-      await _calling.call(callInfo.userID ?? callInfo.groupID ?? "", CallingScenes.Video,
-          offlinePush);
+      await _calling.call(callInfo.userID ?? callInfo.groupID ?? "",
+          CallingScenes.Video, offlinePush);
     }
   }
 
   Future<void> voiceCall(CallInfo callInfo) async {
-    if(context == null){
+    if (context == null) {
       return;
     }
     final hasMicrophonePermission = await Permissions.checkPermission(
@@ -175,8 +175,8 @@ class CallInfoModel extends ChangeNotifier {
         ignoreIOSBadge: false,
       );
 
-      await _calling.call(callInfo.userID ?? callInfo.groupID ?? "", CallingScenes.Audio,
-          offlinePush);
+      await _calling.call(callInfo.userID ?? callInfo.groupID ?? "",
+          CallingScenes.Audio, offlinePush);
     }
   }
 }
