@@ -11,10 +11,10 @@ dependencies:
     sdk: flutter
   loading_animation_widget: ^1.2.0+3
   provider: ^6.0.2
-  tim_ui_kit_push_plugin: ^0.4.6
-  tim_ui_kit_calling_plugin: ^0.4.6
   synchronized: ^3.0.0+3
-  tim_ui_kit: ^0.1.8
+  tencent_cloud_chat_uikit: ^1.0.0
+  tim_ui_kit_calling_plugin: ^1.0.0
+  tim_ui_kit_push_plugin: ^1.0.1
 
 dev_dependencies:
   flutter_test:
@@ -23,7 +23,7 @@ dev_dependencies:
     sdk: flutter
   espresso: ^0.2.0
   flutter_lints: ^2.0.1
-  
+
 dependency_overrides:
   firebase_core_platform_interface: 4.5.1
 

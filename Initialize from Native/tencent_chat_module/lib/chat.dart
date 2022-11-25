@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:tim_ui_kit/business_logic/view_models/tui_chat_global_model.dart';
-import 'package:tim_ui_kit/tim_ui_kit.dart';
-import 'package:tim_ui_kit/ui/utils/color.dart';
+import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_chat_global_model.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/color.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tim_ui_kit/ui/utils/permission.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/permission.dart';
 import 'package:tim_ui_kit_calling_plugin/enum/tim_uikit_trtc_calling_scence.dart';
 import 'package:tim_ui_kit_calling_plugin/tim_ui_kit_calling_plugin.dart';
 
@@ -113,7 +113,7 @@ class _ChatState extends State<Chat> {
                     borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: SvgPicture.asset(
                   "images/voice-call.svg",
-                  package: 'tim_ui_kit',
+                  package: 'tencent_cloud_chat_uikit',
                   height: 64,
                   width: 64,
                 ),
@@ -134,7 +134,7 @@ class _ChatState extends State<Chat> {
                     borderRadius: BorderRadius.all(Radius.circular(5))),
                 child: SvgPicture.asset(
                   "images/video-call.svg",
-                  package: 'tim_ui_kit',
+                  package: 'tencent_cloud_chat_uikit',
                   height: 64,
                   width: 64,
                 ),

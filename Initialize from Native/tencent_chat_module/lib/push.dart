@@ -1,5 +1,5 @@
 
-import 'package:tim_ui_kit/tim_ui_kit.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 import 'package:tim_ui_kit_push_plugin/tim_ui_kit_push_plugin.dart';
 
 class ChannelPush {
