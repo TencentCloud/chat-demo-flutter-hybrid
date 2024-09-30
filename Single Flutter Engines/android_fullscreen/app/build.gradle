@@ -46,7 +46,7 @@ android {
 
 
 dependencies {
-    implementation "com.google.code.gson:gson:2.8.5"
+    implementation "com.google.code.gson:gson:2.8.9"
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation project(':flutter')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
